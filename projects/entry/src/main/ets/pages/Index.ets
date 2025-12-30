@@ -56,17 +56,17 @@ struct TodoListApp {
   @State currentView: 'all' | 'completed' | 'uncompleted' = 'all';
   @State healthSuccessMessage: string = '';
   @State motivationalMessages: string[] = [
-    '🎯 设定目标，追逐梦想！',
-    '💪 每天进步一点点！',
-    '🌟 你比自己想象的更强大！',
-    '🚀 今天的努力是明天的收获！',
-    '🌈 坚持就是胜利！',
-    '🔥 让今天的你比昨天更好！',
-    '✨ 小步快跑，持续进步！',
-    '🌱 成长从行动开始！',
-    '⭐ 每一次尝试都值得骄傲！',
-    '🎊 相信自己，你能做到！',
-    '🏆 成功属于坚持不懈的人！',
+    '设定目标，追逐梦想！',
+    '每天进步一点点！',
+    '你比自己想象的更强大！',
+    '今天的努力是明天的收获！',
+    '坚持就是胜利！',
+    '让今天的你比昨天更好！',
+    '小步快跑，持续进步！',
+    '成长从行动开始！',
+    '每一次尝试都值得骄傲！',
+    '相信自己，你能做到！',
+    '成功属于坚持不懈的人！',
     '💫 梦想在前方等你！'
   ];
   @State emptyStateMotivation: string = '';
@@ -423,21 +423,21 @@ struct TodoListApp {
     const completed = this.getCompletedCount();
     const total = this.todos.length;
 
-    if (total === 0) return '📝 开始你的第一个任务吧！';
-    if (completed === total) return '🎉 太棒了！所有任务都完成了！';
+    if (total === 0) return '开始你的第一个任务吧！';
+    if (completed === total) return '太棒了！所有任务都完成了！';
 
     const percentage = (completed / total) * 100;
     if (percentage >= 80) return this.getRandomMotivationalMessage();
-    if (percentage >= 50) return '💪 已经完成一半了，继续努力！';
-    if (percentage >= 20) return '🚀 良好的开始，坚持下去！';
-    return '🌟 迈出第一步很重要，加油！';
+    if (percentage >= 50) return '已经完成一半了，继续努力！';
+    if (percentage >= 20) return '良好的开始，坚持下去！';
+    return '迈出第一步很重要，加油！';
   }
 
   setEmptyStateMotivation(): void {
     if (this.currentView === 'uncompleted' && this.getUncompletedCount() === 0) {
-      this.emptyStateMotivation = '🎯 太棒了！所有任务都已完成，继续保持这种专注力！';
+      this.emptyStateMotivation = '太棒了！所有任务都已完成，继续保持这种专注力！';
     } else if (this.currentView === 'completed' && this.getCompletedCount() === 0) {
-      this.emptyStateMotivation = '💡 开始行动吧！每完成一个小任务都是向目标迈进的一步！';
+      this.emptyStateMotivation = '开始行动吧！每完成一个小任务都是向目标迈进的一步！';
     } else {
       this.emptyStateMotivation = this.getRandomMotivationalMessage();
     }
@@ -535,7 +535,7 @@ struct TodoListApp {
         }
 
         Row({ space: 10 }) {
-          Button('一键切换')
+          Button('一键完成')
             .width(120)
             .height(40)
             .fontColor(Color.White)
@@ -774,7 +774,7 @@ struct TodoListApp {
 
                 Column() {
                   Blank().height(20)
-                  Text(this.emptyStateMotivation || '🎯 太棒了！所有任务都已完成，继续保持这种专注力！')
+                  Text(this.emptyStateMotivation || '太棒了！所有任务都已完成，继续保持这种专注力！')
                     .fontSize(16)
                     .fontColor('#4CAF50')
                     .fontWeight(FontWeight.Medium)
@@ -809,7 +809,7 @@ struct TodoListApp {
 
                 Column() {
                   Blank().height(20)
-                  Text(this.emptyStateMotivation || '💡 开始行动吧！每完成一个小任务都是向目标迈进的一步！')
+                  Text(this.emptyStateMotivation || '开始行动吧！每完成一个小任务都是向目标迈进的一步！')
                     .fontSize(16)
                     .fontColor('#FF6B6B')
                     .fontWeight(FontWeight.Medium)
