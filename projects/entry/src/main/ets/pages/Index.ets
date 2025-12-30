@@ -67,7 +67,7 @@ struct TodoListApp {
     '每一次尝试都值得骄傲！',
     '相信自己，你能做到！',
     '成功属于坚持不懈的人！',
-    '💫 梦想在前方等你！'
+    '梦想在前方等你！'
   ];
   @State emptyStateMotivation: string = '';
   @State healthForceUpdateKey: number = 0;
@@ -572,7 +572,7 @@ struct TodoListApp {
                     .fill(reminder.uiSelected ? '#4CAF50' : '#FF9800')
                     .margin({ bottom: 3 })
 
-                  Button(reminder.uiSelected ? '✓ 已完成' : '○ 未完成')
+                  Button(reminder.uiSelected ? '已完成' : '未完成')
                     .width(75)
                     .height(30)
                     .fontSize(11)
